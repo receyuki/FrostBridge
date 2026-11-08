@@ -13,6 +13,7 @@
   <p>
     <a href="#why-i-built-frostbridge">My story</a> ·
     <a href="#what-it-does">Features</a> ·
+    <a href="#use-with-an-agent">Agent setup</a> ·
     <a href="#quick-start">Quick start</a> ·
     <a href="docs/en/usage.md">Usage</a> ·
     <a href="docs/en/troubleshooting.md">FAQ</a> ·
@@ -42,6 +43,47 @@ FrostBridge runs locally on ESP32. It needs no FrostBridge cloud backend/account
 - Device readback confirms changes. Stale readings, failed commands and backup errors remain visible.
 - Optional daily backup learns confirmed actions from a complete Beijing-time day (UTC+8); it does not import Home app rules. Incomplete days keep the old sample; a complete empty day makes no changes.
 - Static assets in flash; no CDN or runtime compression. USB updates on a single 3 MB app partition; **no OTA**.
+
+## Use with an agent
+
+Copy this prompt into a coding agent to get help with setup, updates or everyday use. An agent with local terminal/USB access can perform the computer-side steps; iPhone/iPad pairing still needs you.
+
+<details>
+<summary>Copy the agent prompt</summary>
+
+```text
+Help me set up and use FrostBridge: https://github.com/receyuki/FrostBridge
+
+Use my local checkout, or obtain the repository through access I have authorized.
+1. Read README.md and docs/en/getting-started.md. For HomeKit/automations, read
+   docs/en/usage.md; for other fridge models, docs/en/compatibility.md; for failures,
+   docs/en/troubleshooting.md.
+2. Inspect this computer's OS, Python/tools, project state and available serial ports.
+   Establish whether I need first setup, an update or help with an existing gateway. Ask
+   only for critical details you cannot determine, such as the intended board/fridge or
+   an ambiguous port.
+3. Use the documented frostbridge.py commands to complete the needed steps. Keep English
+   defaults; select Chinese only if I request it. Preserve existing Wi-Fi, fridge
+   binding, HomeKit pairing and user settings during updates.
+4. Follow SECURITY.md: let me enter Wi-Fi credentials locally through hidden terminal
+   input or the available Tk dialog. Keep passwords, setup codes, pairing QR pages,
+   BLE binding identifiers and raw logs local; redirect sensitive command output into an
+   ignored local file and report only redacted results.
+5. For Apple Home pairing, open the local QR page for me to scan with the iPhone/iPad
+   Home app. Group necessary physical/phone steps so I can complete them together;
+   continue independently where possible.
+6. Use supported controls for actions I request and confirm results through fresh device
+   readback. Follow the compatibility guide for an unverified fridge. Follow the usage
+   guide for automation inputs and daily backup; it learns confirmed actions rather than
+   importing Home app rules.
+
+Finish with what you actually executed/verified, the local Web address, and any
+remaining manual or unverified steps. Distinguish a successful build from physical
+acceptance. If you cannot access my computer/USB, state that limitation and give exact
+local commands for the steps you cannot execute.
+```
+
+</details>
 
 ## Quick start
 
