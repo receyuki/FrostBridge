@@ -46,40 +46,27 @@ FrostBridge在ESP32本地运行，不需要自己的云后台或账号，也不�
 
 ## 交给 Agent 协助使用
 
-将下方提示词复制给 coding agent，可用于初次安装、更新或日常使用。能访问本机终端／USB 的 agent 可以执行电脑端步骤；iPhone／iPad 配对仍需你操作。
+填入具体目标后，将下方提示词复制给 coding agent，让它按现有文档执行。
 
 <details>
 <summary>复制给 Agent 的提示词</summary>
 
 ```text
-请帮我部署并使用 FrostBridge：https://github.com/receyuki/FrostBridge
+请使用 FrostBridge 帮我完成：[填写具体目标]。
+仓库：https://github.com/receyuki/FrostBridge
 
-使用本地已有仓库，或通过我已授权的访问方式获取仓库。
-1. 阅读 README.zh-CN.md 和 docs/zh-CN/getting-started.md。
-   涉及 HomeKit／自动化时读 docs/zh-CN/usage.md；
-   其他冰箱型号读 docs/zh-CN/compatibility.md；
-   遇到失败读 docs/zh-CN/troubleshooting.md。
-2. 检查本机系统、Python／工具、项目状态和可用串口，
-   明确我是首次安装、更新还是使用已有网关。
-   只询问无法自行确定的关键资料，例如目标板子／冰箱或有歧义的串口。
-3. 使用文档中的 frostbridge.py 命令完成必要步骤。
-   保留英文默认，仅在我要求时选择中文；更新时保留已有 Wi-Fi、
-   冰箱绑定、HomeKit 配对和用户设置。
-4. 按 SECURITY.md 处理私人信息：让我通过本机终端隐藏输入，
-   或使用可用的 Tk 窗口输入 Wi-Fi 凭据。
-   密码、配对码、二维码页、蓝牙绑定标识和原始日志留在本地；
-   含敏感内容的命令输出重定向到本地忽略文件，汇报只用脱敏结果。
-5. Apple 家庭配对时，在本机打开二维码页，
-   由我用 iPhone／iPad 的家庭 App 扫描。
-   将必要的实物／手机步骤集中安排，其他可自行完成的工作继续推进。
-6. 对我要求的控制使用已支持的接口，并以设备新鲜回读确认结果。
-   未验证冰箱先按兼容指南核验；自动化入口和每日备用按使用文档配置，
-   明确它学习已确认动作，不会导入家庭 App 规则。
+使用本地仓库或我已授权的仓库访问方式。文档位置：
+- README.zh-CN.md：项目范围、硬件与快速开始。
+- docs/zh-CN/getting-started.md：编译、刷写、Wi-Fi、冰箱绑定与 HomeKit 配对。
+- docs/zh-CN/usage.md：日常控制、HomeKit 自动化与备用。
+- docs/zh-CN/compatibility.md：其他冰箱型号。
+- docs/zh-CN/troubleshooting.md：故障排查。
+- SECURITY.md：凭据与私人数据处理。
+- CONTRIBUTING.zh-CN.md 和 docs/zh-CN/development.md：代码修改与验证。
 
-最后说明实际执行和验证了什么、局域网网页地址，
-以及还需我操作或尚未验证的项目。编译成功与实机验收分别汇报。
-如果你无法访问本机或 USB，请说明能力边界，
-并给出无法代办步骤的准确本机命令。
+先阅读与目标相关的文档，再执行能自行完成的步骤。
+仅在缺少信息或需要我操作时询问，最后说明已验证和待办事项。
+如无法访问本机／USB，请给出需我执行的准确本机命令。
 ```
 
 </details>

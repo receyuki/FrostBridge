@@ -46,41 +46,28 @@ FrostBridge runs locally on ESP32. It needs no FrostBridge cloud backend/account
 
 ## Use with an agent
 
-Copy this prompt into a coding agent to get help with setup, updates or everyday use. An agent with local terminal/USB access can perform the computer-side steps; iPhone/iPad pairing still needs you.
+Fill in your goal, then copy this prompt to your coding agent. It points to the existing documentation.
 
 <details>
 <summary>Copy the agent prompt</summary>
 
 ```text
-Help me set up and use FrostBridge: https://github.com/receyuki/FrostBridge
+Help me use FrostBridge: https://github.com/receyuki/FrostBridge
+My goal: [describe what you want to do].
 
-Use my local checkout, or obtain the repository through access I have authorized.
-1. Read README.md and docs/en/getting-started.md. For HomeKit/automations, read
-   docs/en/usage.md; for other fridge models, docs/en/compatibility.md; for failures,
-   docs/en/troubleshooting.md.
-2. Inspect this computer's OS, Python/tools, project state and available serial ports.
-   Establish whether I need first setup, an update or help with an existing gateway. Ask
-   only for critical details you cannot determine, such as the intended board/fridge or
-   an ambiguous port.
-3. Use the documented frostbridge.py commands to complete the needed steps. Keep English
-   defaults; select Chinese only if I request it. Preserve existing Wi-Fi, fridge
-   binding, HomeKit pairing and user settings during updates.
-4. Follow SECURITY.md: let me enter Wi-Fi credentials locally through hidden terminal
-   input or the available Tk dialog. Keep passwords, setup codes, pairing QR pages,
-   BLE binding identifiers and raw logs local; redirect sensitive command output into an
-   ignored local file and report only redacted results.
-5. For Apple Home pairing, open the local QR page for me to scan with the iPhone/iPad
-   Home app. Group necessary physical/phone steps so I can complete them together;
-   continue independently where possible.
-6. Use supported controls for actions I request and confirm results through fresh device
-   readback. Follow the compatibility guide for an unverified fridge. Follow the usage
-   guide for automation inputs and daily backup; it learns confirmed actions rather than
-   importing Home app rules.
+Use a local checkout or repository access I have authorized. Documentation:
+- README.md: project scope, hardware and quick start.
+- docs/en/getting-started.md: build, flash, Wi-Fi, fridge binding and HomeKit pairing.
+- docs/en/usage.md: daily controls, HomeKit automations and backup.
+- docs/en/compatibility.md: other fridge models.
+- docs/en/troubleshooting.md: diagnose failures.
+- SECURITY.md: credentials and private data.
+- CONTRIBUTING.md and docs/en/development.md: code changes and validation.
 
-Finish with what you actually executed/verified, the local Web address, and any
-remaining manual or unverified steps. Distinguish a successful build from physical
-acceptance. If you cannot access my computer/USB, state that limitation and give exact
-local commands for the steps you cannot execute.
+Read the documents relevant to my goal, then carry out the available steps.
+Ask only for missing information or steps requiring my involvement.
+Report what you verified and what remains; if you cannot access my computer/USB,
+give the exact local commands I need to run.
 ```
 
 </details>
