@@ -74,6 +74,8 @@ give the exact local commands I need to run.
 
 ## Quick start
 
+**Install without compiling:** download the English or Chinese firmware ZIP from [v0.1.0 Release](https://github.com/receyuki/FrostBridge/releases/tag/v0.1.0), then follow the included [installation guide](docs/en/prebuilt.md): tools → USB install → Wi-Fi → select your fridge → HomeKit QR. Existing devices can update while keeping their configuration. The source-build route is below.
+
 **Hardware used in this project:** Waveshare **ESP32-DEV-KIT-WROOM-32E-N4**, a classic ESP32 development board with 4 MB flash and no PSRAM. This is the board used for the project's physical validation.
 
 **Using another fridge?** You can scan/select it without editing C15 names in source. Only the author's C15 is physically verified so far; other single-zone devices need protocol/state checks, and second-zone control is not implemented. See [compatibility and how to help verify your model](docs/en/compatibility.md).

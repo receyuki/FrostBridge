@@ -16,6 +16,7 @@ The project [MIT license](LICENSE) covers FrostBridge-owned code and documentati
 | ESP-IDF and SDK components | Arduino 3.3.12 build identifies ESP-IDF 5.5.5 | Apache-2.0 and component-specific terms, including binary components | [ESP-IDF license](https://github.com/espressif/esp-idf/blob/v5.5.5/LICENSE), [component source](https://github.com/espressif/esp-idf/tree/v5.5.5/components) |
 | PlatformIO Core / Espressif32 platform (build tools) | Core 6.2.0 / platform 8.0.0 | Apache-2.0 | [Core license](third_party/licenses/PlatformIO-LICENSE.txt), [platform](https://github.com/platformio/platform-espressif32/blob/v8.0.0/LICENSE) |
 | PySerial (host USB tool) | 3.5 | BSD-style | [License](third_party/licenses/PySerial-LICENSE.txt) |
+| esptool (host prebuilt USB installer; not linked into firmware) | [5.6.0](https://github.com/espressif/esptool/tree/v5.6.0) | GPL-2.0-or-later | [License](third_party/licenses/esptool-GPL-2.0.txt); installed separately by pip |
 | python-qrcode (local host pairing QR, not firmware) | [8.2](https://github.com/lincolnloop/python-qrcode/tree/v8.2) | BSD | [License](third_party/licenses/python-qrcode-LICENSE.txt) |
 
 Protocol descriptions and captured vectors informed an independent implementation. Upstream Wi-Fi/MQTT application code is not imported. The deidentified C15 fixtures identify real captures versus simulated derivatives in their [README](test/fixtures/README.md).
@@ -31,9 +32,13 @@ These are research citations, not additional linked firmware dependencies or imp
 
 ## Binary distribution / 二进制分发
 
-The clean source export is not a complete firmware-binary license bundle or SDK SBOM. Before publishing compiled firmware, include the required upstream notices and provide the corresponding source/relinking materials required by the applicable licenses, including the LGPL components. Keep the exact source revision, build configuration, SDK/package versions and modifications. See the [Arduino core's license](third_party/licenses/Arduino-ESP32-LGPL-2.1.md), especially its library/linking distribution terms. The CI provided here builds firmware but does not publish binary releases.
+Firmware Releases are accompanied by a `source-support.zip` asset with the corresponding Arduino-ESP32 library source as used, the complete FrostBridge work that uses it, direct library sources, pinned SDK source archives/notices and build inputs. The LGPL-2.1-or-later [Arduino license](third_party/licenses/Arduino-ESP32-LGPL-2.1.md) is included. Users may modify the libraries and rebuild/relink; no project restriction is imposed on reverse engineering for debugging those modifications. See [rebuilding instructions](docs/en/rebuilding.md). Other components keep their own terms; this is not a claim that the entire SDK uses LGPL or that this inventory is a complete SDK SBOM. CI builds and checks source; release publication is a separate explicit step.
 
-干净源码导出不等于完整二进制许可包或SDK SBOM。发布编译固件前，需要保留适用上游NOTICE，并按各许可提供所需的对应源码/重新链接材料（包括LGPL组件）；保存准确源码版本、配置、SDK/包版本和修改记录。请阅读Arduino核心许可的库/链接分发条款。当前CI只构建，不发布固件二进制release。
+固件 Release 同时提供 `source-support.zip`，包含实际使用的 Arduino-ESP32 库源码、使用该库的完整 FrostBridge 源码、直接依赖源码、固定 SDK 源码归档／许可及构建信息。保留 LGPL-2.1-or-later Arduino 许可，允许修改后重建／重新链接，不附加限制调试这些修改所需逆向工程的条款，见[重建说明](docs/zh-CN/rebuilding.md)。其他组件各自许可继续适用，不将整个 SDK 笼统称为 LGPL，也不声称清单为完整 SDK SBOM。CI 负责构建检查，发布仍是单独授权的步骤。
+
+ESP-IDF 5.5.5 and relevant component notices are retained in [SDK notices](third_party/licenses/esp-idf/README.md), including the Espressif Wi-Fi, PHY, Bluetooth and coexistence binary-component licenses. GCC runtime exception and C/C++ runtime notices are included in the source-support archive; toolchain executables are fetched separately, not redistributed in the firmware installation ZIPs.
+
+ESP-IDF 5.5.5 及相关组件许可见 [SDK 许可](third_party/licenses/esp-idf/README.md)，包括 Espressif Wi-Fi、PHY、蓝牙与共存二进制组件。GCC 运行时例外及 C／C++ 运行时声明在源码支持附件中保留；工具链程序另行下载，不随固件安装 ZIP 分发。
 
 ## Artwork / 图形
 

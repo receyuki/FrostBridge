@@ -12,6 +12,7 @@ THIRD_PARTY_NOTICES.md
 docs/en/compatibility.md
 docs/en/development.md
 docs/en/getting-started.md
+docs/en/prebuilt.md
 docs/en/troubleshooting.md
 docs/en/usage.md
 docs/images/control-en.png
@@ -20,6 +21,7 @@ docs/images/logo.png
 docs/zh-CN/compatibility.md
 docs/zh-CN/development.md
 docs/zh-CN/getting-started.md
+docs/zh-CN/prebuilt.md
 docs/zh-CN/troubleshooting.md
 docs/zh-CN/usage.md
 frostbridge.py
@@ -46,11 +48,14 @@ public-files.txt
 requirements-homekit-diagnostics.lock
 requirements-tools.lock
 requirements.txt
+requirements-install.txt
 scripts/capture_serial.py
 scripts/check_coexistence.py
 scripts/check_gateway_web.py
 scripts/check_homekit.py
 scripts/embed_web.py
+scripts/firmware_bundle.py
+scripts/package_firmware.py
 scripts/pio
 scripts/pio_assets.py
 scripts/provision.py
@@ -64,6 +69,7 @@ scripts/test_http.py
 scripts/test_mailbox.py
 scripts/test_portal.py
 scripts/test_protocol.py
+scripts/test_prebuilt.py
 scripts/test_runtime.py
 scripts/test_schedule.py
 scripts/test_trusted_clock.py
@@ -109,6 +115,7 @@ third_party/licenses/Apache-NimBLE-LICENSE.txt
 third_party/licenses/Apache-NimBLE-NOTICE.txt
 third_party/licenses/Arduino-ESP32-LGPL-2.1.md
 third_party/licenses/ArduinoJson-MIT.txt
+third_party/licenses/esptool-GPL-2.0.txt
 third_party/licenses/HomeSpan-MIT.txt
 third_party/licenses/NimBLE-Arduino-Apache-2.0.txt
 third_party/licenses/NimBLE-Arduino-NOTICE.txt
@@ -122,3 +129,17 @@ web/apple-touch-icon.png
 web/favicon.ico
 web/favicon.png
 web/index.html
+scripts/package_sources.py
+docs/en/rebuilding.md
+docs/zh-CN/rebuilding.md
+third_party/licenses/esp-idf/ESP-IDF-Apache-2.0.txt
+third_party/licenses/esp-idf/README.md
+third_party/licenses/esp-idf/esp-coex-lib-LICENSE
+third_party/licenses/esp-idf/esp-lwip-COPYING
+third_party/licenses/esp-idf/esp-phy-lib-LICENSE
+third_party/licenses/esp-idf/esp32-bt-lib-LICENSE
+third_party/licenses/esp-idf/esp32-wifi-lib-LICENSE
+third_party/licenses/esp-idf/mbedtls-LICENSE
+third_party/licenses/esp-idf/mdns-LICENSE
+third_party/licenses/esp-idf/TLSF-NOTICE.txt
+third_party/licenses/esp-idf/BSD-3-Clause.txt

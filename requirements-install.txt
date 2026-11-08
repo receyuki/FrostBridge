@@ -1,0 +1,4 @@
+# Prebuilt firmware users: no compiler or PlatformIO.
+esptool==5.6.0
+pyserial==3.5
+qrcode==8.2

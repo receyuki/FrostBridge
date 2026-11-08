@@ -218,9 +218,31 @@ def source_export(args):
 def main():
     global LANG
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--lang', choices=['en', 'zh-CN'], default='en', help='Terminal messages')
+    default_language = 'en'
+    bundle_manifest = ROOT / 'firmware/manifest.json'
+    if bundle_manifest.is_file():
+        try:
+            candidate = json.loads(bundle_manifest.read_text(encoding='utf-8')).get('homekit_language')
+            if candidate in ('en', 'zh-CN'):
+                default_language = candidate
+        except (ValueError, OSError):
+            pass
+    parser.add_argument('--lang', choices=['en', 'zh-CN'], default=default_language, help='Terminal messages; installation bundles default to their language')
     commands = parser.add_subparsers(dest='command', required=True)
-    commands.add_parser('setup', help='Create .venv and install pinned build tools')
+    item = commands.add_parser('setup', help='Install tools (prebuilt bundles skip the compiler)')
+    item.add_argument('--prebuilt', action='store_true', help='Install lightweight USB/QR tools only')
+    item = commands.add_parser('install', help='Flash a prebuilt package without compiling')
+    item.add_argument('--port', required=True)
+    item.add_argument('--package', type=Path, default=ROOT, help='Extracted installation package directory')
+    item.add_argument('--update', action='store_true', help='Verify existing partition layout and write application only')
+    item.add_argument('--dry-run', action='store_true', help='Validate package and show command without opening USB')
+    item = commands.add_parser('package', help='Package a previously built production firmware')
+    item.add_argument('--output', type=Path, required=True)
+    item.add_argument('--version', required=True)
+    item.add_argument('--homekit-language', choices=['en', 'zh-CN'], default='en')
+    channel = item.add_mutually_exclusive_group()
+    channel.add_argument('--prerelease', action='store_true', help='Mark a distribution bundle as prerelease')
+    channel.add_argument('--release', action='store_true', help='Mark a distribution bundle as a release')
     for command in ('build', 'flash'):
         item = commands.add_parser(command, help='Build' if command == 'build' else 'Build and flash')
         item.add_argument('--homekit-language', choices=['en', 'zh-CN'], default='en', help='Factory accessory names (default: en); Web has its own selector')
@@ -249,8 +271,22 @@ def main():
     if args.command == 'setup':
         if not PYTHON.exists():
             venv.EnvBuilder(with_pip=True).create(ROOT / '.venv')
-        run([PYTHON, '-m', 'pip', 'install', '--disable-pip-version-check', '-r', ROOT / 'requirements.txt'])
-        print(text('Ready. Next: python frostbridge.py build', '工具就绪。下一步：python frostbridge.py build'))
+        prebuilt = args.prebuilt or (ROOT / 'firmware/manifest.json').is_file()
+        requirements = ROOT / ('requirements-install.txt' if prebuilt else 'requirements.txt')
+        if prebuilt:
+            run([PYTHON, '-m', 'pip', 'install', '--disable-pip-version-check', '--upgrade', 'pip'])
+        run([PYTHON, '-m', 'pip', 'install', '--disable-pip-version-check',
+             *(['--only-binary=cryptography,cffi'] if prebuilt else []), '-r', requirements])
+        next_command = 'ports' if prebuilt else 'build'
+        print(text('Ready. Next: python frostbridge.py ', '工具就绪。下一步：python frostbridge.py ') + next_command)
+    elif args.command == 'install':
+        from scripts.firmware_bundle import install
+        if not args.dry_run:
+            use_venv()
+        install(args.package, args.port, sys.executable, args.update, args.dry_run, text)
+    elif args.command == 'package':
+        from scripts.package_firmware import package
+        package(args, source_export)
     elif args.command in ('build', 'flash'):
         environment = 'gateway_zh' if args.homekit_language == 'zh-CN' else 'gateway'
         arguments = ['run', '-e', environment]
@@ -276,15 +312,18 @@ def main():
         print('Python:', sys.version.split()[0])
         print('Project:', ROOT)
         print('Project virtualenv:', 'OK' if PYTHON.exists() else 'missing: run setup')
-        print('clang++:', shutil.which('clang++') or 'not installed (only needed for host tests)')
+        prebuilt = (ROOT / 'firmware/manifest.json').is_file()
+        if not prebuilt:
+            print('clang++:', shutil.which('clang++') or 'not installed (only needed for host tests)')
         if PYTHON.exists():
-            run([PYTHON, '-m', 'platformio', '--version'])
+            run([PYTHON, '-m', 'esptool' if prebuilt else 'platformio', 'version' if prebuilt else '--version'])
     elif args.command == 'test':
         require_tools()
         if not shutil.which('clang++'):
             raise RuntimeError('Host tests need clang++ with ASan/UBSan; macOS is locally validated and Linux CI is configured.')
         for name in ['protocol', 'controller', 'schedule', 'trusted_clock', 'daily_replay', 'runtime', 'http', 'mailbox', 'portal', 'homekit', 'homekit_bridge']:
             run([PYTHON, ROOT / 'scripts' / ('test_' + name + '.py')])
+        run([PYTHON, ROOT / 'scripts/test_prebuilt.py'])
 
 if __name__ == '__main__':
     try:

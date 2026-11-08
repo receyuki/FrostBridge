@@ -11,6 +11,7 @@
 | Build succeeds but only smoke output | Use the gateway/gateway_zh environment. `basic`, `coexistence`, `readout` are diagnostics, not the daily-control product. |
 | Wi-Fi not connected | Confirm 2.4GHz personal Wi-Fi, SSID/password byte limits and same-network access. Use `wifi`; to correct only SSID, use `--keep-password`. Do not send passwords in issue reports. |
 | frostbridge.local does not resolve | Find the current ESP32 IPv4 in the router and use `http://IP`. mDNS may be blocked on guest/VLAN networks. |
+| .local returns HTTP 502, but the device IP works | Check the browser/system proxy or PAC. A proxy may be unable to resolve the LAN-only .local name. Use the device's current IP, or configure a DIRECT rule for frostbridge.local in your proxy software. Firmware flashing and Wi-Fi reprovisioning do not fix proxy routing. |
 | Browser tries HTTPS | Enter the explicit `http://` address, then bookmark/add to home screen. This firmware does not provide TLS. |
 | Fridge absent / stale | Power/range, factory app/nRF Connect holding BLE, selected target and its actual protocol. Keep old readings marked stale. `bind` preserves an existing target; `--replace` is explicit. |
 | No fresh state after bind | A matching advertised service does not prove support. Check device model/firmware and local logs; no cooling setting is sent by bind. |

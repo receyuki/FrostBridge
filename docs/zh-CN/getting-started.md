@@ -1,5 +1,7 @@
 # 编译、刷写与配对
 
+可下载的预编译固件见[免编译安装](prebuilt.md)。以下保留源码编译流程。
+
 [English](../en/getting-started.md) · [简体中文](getting-started.md) · [首页](../../README.zh-CN.md)
 
 ## 准备条件

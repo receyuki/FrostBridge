@@ -73,6 +73,8 @@ FrostBridge在ESP32本地运行，不需要自己的云后台或账号，也不�
 
 ## 快速开始
 
+**免编译安装：**从 [v0.1.0 Release](https://github.com/receyuki/FrostBridge/releases/tag/v0.1.0) 下载中／英文固件 ZIP，按包内[安装说明](docs/zh-CN/prebuilt.md)依次完成：工具准备 → USB 刷写 → Wi-Fi → 选择自己的冰箱 → HomeKit 二维码。已有设备可保留配置升级。下方保留源码编译方式。
+
 **本项目实际使用的硬件：** 微雪（Waveshare）**ESP32-DEV-KIT-WROOM-32E-N4**，经典 ESP32 开发板，4MB Flash、无 PSRAM。项目中的实机验证均使用这块开发板完成。
 
 **使用其他型号？** 无需修改源码中的 C15 名称即可扫描、选择设备。目前只有作者的 C15 做过实机验证；其他单区设备需核验协议与状态，第二温区控制尚未实现。参见[兼容性及其他型号核验流程](docs/zh-CN/compatibility.md)。

@@ -11,6 +11,7 @@
 | 构建后只有smoke输出 | 使用gateway/gateway_zh；basic、coexistence、readout是诊断环境。 |
 | Wi-Fi未连上 | 核对2.4GHz个人网络、SSID/密码字节限制和网络可达性。用wifi配网，只有SSID错可用--keep-password；不要公开密码。 |
 | .local无法解析 | 在路由器查当前ESP32地址，用http://IP；访客网络/VLAN可能隔离mDNS。 |
+| .local显示HTTP 502，但IP能打开 | 检查浏览器／系统代理和PAC；代理可能无法解析仅局域网可用的.local域名。使用设备当前IP，或在代理软件中为frostbridge.local设置DIRECT直连规则。重新刷写或配网不能修复代理路由。 |
 | 浏览器尝试HTTPS | 明确输入http://后存书签/主屏幕图标；当前固件不提供TLS。 |
 | 冰箱离线／读数过期 | 核对供电、距离、原厂App/nRF占用、所选目标与实际协议。保留旧值但不能当新鲜数据。bind默认保留目标，--replace才明确更换。 |
 | 绑定后没新鲜状态 | 相同广播服务不代表兼容；核对型号、固件和本地日志。bind不会请求改变制冷设置。 |

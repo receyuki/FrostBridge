@@ -1,5 +1,7 @@
 # Build, flash and pair
 
+For downloadable precompiled firmware, see [installing without compilation](prebuilt.md). Source builds remain available below.
+
 [English](getting-started.md) · [简体中文](../zh-CN/getting-started.md) · [Home](../../README.md)
 
 ## Requirements

@@ -1,0 +1,5 @@
+/*
+ * SPDX-FileCopyrightText: 2006-2016 Matthew Conte
+ *
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
