@@ -22,6 +22,13 @@ Protocol descriptions and captured vectors informed an independent implementatio
 
 协议参考与捕获向量用于独立实现，没有导入上游Wi-Fi/MQTT应用。脱敏C15 fixture区分真实捕获和模拟派生，见其README。
 
+Additional protocol-layout research references / 其他协议布局研究来源:
+
+- [dandwhelan/Alpicool50l12vfridgefreezer, 3f7ec01](https://github.com/dandwhelan/Alpicool50l12vfridgefreezer/tree/3f7ec01eced922aae431bb90e9c92ac9a60bb0c2): model-specific Set02 projection, including the model1 branch used as a reference for the C15 implementation / 按型号选择Set02字段的分析，包括C15实现所参考的model1分支。
+- [johnelliott/alpicoold, 8530ecb](https://github.com/johnelliott/alpicoold/tree/8530ecba99823461bcebfc20e62082771bb55fba) and [jakub-hajek/alpicool-esp32-mqtt, 397028e](https://github.com/jakub-hajek/alpicool-esp32-mqtt/tree/397028e69fd5c26a68d44d19557f09bfb7f95449): short-status/settings-layout cross-checks / 短状态帧与设置布局交叉核对。
+
+These are research citations, not additional linked firmware dependencies or imports of their applications. Their inclusion here does not assign them the FrostBridge MIT license. / 上述为研究引用，不是额外链接的固件依赖或应用代码导入；此处列名不表示将其改为FrostBridge的MIT许可。
+
 ## Binary distribution / 二进制分发
 
 The clean source export is not a complete firmware-binary license bundle or SDK SBOM. Before publishing compiled firmware, include the required upstream notices and provide the corresponding source/relinking materials required by the applicable licenses, including the LGPL components. Keep the exact source revision, build configuration, SDK/package versions and modifications. See the [Arduino core's license](third_party/licenses/Arduino-ESP32-LGPL-2.1.md), especially its library/linking distribution terms. The CI provided here builds firmware but does not publish binary releases.

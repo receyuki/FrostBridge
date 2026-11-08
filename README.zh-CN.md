@@ -92,4 +92,17 @@ python3 frostbridge.py export --output .local/dist/FrostBridge-source.zip
 
 项目自有代码和文档采用 [MIT](LICENSE)。依赖继续使用各自许可，MIT不替代Arduino核心的LGPL等上游条款；分发固件二进制前请阅读[第三方说明](THIRD_PARTY_NOTICES.md)。
 
-协议参考 [BrassMonkeyFridgeMonitor](third_party/BrassMonkeyFridgeMonitor/README.md)，MIT © Ben Peddell。机械雪花图标由图像模型生成，不代表任何品牌关联。FrostBridge是社区项目，不是经Apple认证或Alpicool背书的配件。
+FrostBridge 使用了以下项目：
+
+| 项目 | 在 FrostBridge 中的用途 |
+|---|---|
+| [HomeSpan](https://github.com/HomeSpan/HomeSpan/tree/2.1.8) | ESP32 上的 HomeKit 配对、配件服务／特征与通信。 |
+| [NimBLE-Arduino](https://github.com/h2zero/NimBLE-Arduino/tree/2.5.1) | BLE 发现、连接、冰箱通知接收与命令传输。 |
+| [ArduinoJson](https://github.com/bblanchon/ArduinoJson/tree/v7.4.3) | Web API 的 JSON 解析与生成。 |
+| [Arduino-ESP32](https://github.com/espressif/arduino-esp32/tree/3.3.12) / [ESP-IDF](https://github.com/espressif/esp-idf/tree/v5.5.5) | 硬件、Wi-Fi、TCP/IP、mDNS、时间与持久化存储基础。 |
+| [PlatformIO](https://github.com/platformio/platformio-core/tree/v6.2.0) | 依赖管理、固件编译与 USB 刷写。 |
+| [PySerial](https://github.com/pyserial/pyserial/tree/v3.5) / [python-qrcode](https://github.com/lincolnloop/python-qrcode/tree/v8.2) | 电脑端 USB 配置与本地 HomeKit 配对二维码生成。 |
+
+协议研究参考 [BrassMonkeyFridgeMonitor](third_party/BrassMonkeyFridgeMonitor/README.md)（MIT © Ben Peddell），以及 [Alpicool50l12vfridgefreezer](https://github.com/dandwhelan/Alpicool50l12vfridgefreezer/tree/3f7ec01eced922aae431bb90e9c92ac9a60bb0c2) 的分型号布局分析；另用 [alpicoold](https://github.com/johnelliott/alpicoold/tree/8530ecba99823461bcebfc20e62082771bb55fba) 与 [alpicool-esp32-mqtt](https://github.com/jakub-hajek/alpicool-esp32-mqtt/tree/397028e69fd5c26a68d44d19557f09bfb7f95449) 交叉核对布局。这些属于协议研究来源；本项目自行实现 C++ 协议、控制与回读确认、每日备用及 Web／HomeKit 适配。
+
+机械雪花图标由图像模型生成，不代表任何品牌关联。FrostBridge是社区项目，不是经Apple认证或Alpicool背书的配件。

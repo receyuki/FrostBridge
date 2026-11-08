@@ -92,4 +92,17 @@ The export command creates a source-only ZIP without Git history, private captur
 
 FrostBridge-owned code and documentation use the [MIT License](LICENSE). Dependencies retain their own licenses; MIT does not replace the Arduino core's LGPL or other upstream terms. See [Third-party notices](THIRD_PARTY_NOTICES.md) before redistributing firmware binaries.
 
-Protocol reference: [BrassMonkeyFridgeMonitor](third_party/BrassMonkeyFridgeMonitor/README.md), MIT © Ben Peddell. The mechanical snowflake icon was generated with an image model; no brand affiliation is implied. FrostBridge is a community project, not an Apple-certified or Alpicool-endorsed accessory.
+FrostBridge builds on these projects:
+
+| Project | Role in FrostBridge |
+|---|---|
+| [HomeSpan](https://github.com/HomeSpan/HomeSpan/tree/2.1.8) | HomeKit pairing, accessory services/characteristics and communication on ESP32. |
+| [NimBLE-Arduino](https://github.com/h2zero/NimBLE-Arduino/tree/2.5.1) | BLE discovery, connection and fridge notification/command transport. |
+| [ArduinoJson](https://github.com/bblanchon/ArduinoJson/tree/v7.4.3) | Web API JSON parsing and serialization. |
+| [Arduino-ESP32](https://github.com/espressif/arduino-esp32/tree/3.3.12) / [ESP-IDF](https://github.com/espressif/esp-idf/tree/v5.5.5) | Hardware, Wi-Fi, TCP/IP, mDNS, time and persistent-storage foundations. |
+| [PlatformIO](https://github.com/platformio/platformio-core/tree/v6.2.0) | Dependency management, firmware builds and USB flashing. |
+| [PySerial](https://github.com/pyserial/pyserial/tree/v3.5) / [python-qrcode](https://github.com/lincolnloop/python-qrcode/tree/v8.2) | Host-side USB setup and local HomeKit pairing QR generation. |
+
+Protocol research uses [BrassMonkeyFridgeMonitor](third_party/BrassMonkeyFridgeMonitor/README.md), MIT © Ben Peddell, and the model-specific layout work in [Alpicool50l12vfridgefreezer](https://github.com/dandwhelan/Alpicool50l12vfridgefreezer/tree/3f7ec01eced922aae431bb90e9c92ac9a60bb0c2). Further layout cross-checks used [alpicoold](https://github.com/johnelliott/alpicoold/tree/8530ecba99823461bcebfc20e62082771bb55fba) and [alpicool-esp32-mqtt](https://github.com/jakub-hajek/alpicool-esp32-mqtt/tree/397028e69fd5c26a68d44d19557f09bfb7f95449). These are protocol research references; FrostBridge provides its own C++ protocol implementation, Controller/readback logic, daily backup and Web/HomeKit integration.
+
+The mechanical snowflake icon was generated with an image model; no brand affiliation is implied. FrostBridge is a community project, not an Apple-certified or Alpicool-endorsed accessory.
