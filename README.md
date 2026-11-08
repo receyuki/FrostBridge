@@ -46,14 +46,14 @@ FrostBridge runs locally on ESP32. It needs no FrostBridge cloud backend/account
 
 ## Use with an agent
 
-Fill in your goal, then copy this prompt to your coding agent. It points to the existing documentation.
+Copy this prompt directly to your coding agent. No editing is needed.
 
 <details>
 <summary>Copy the agent prompt</summary>
 
 ```text
-Help me use FrostBridge: https://github.com/receyuki/FrostBridge
-My goal: [describe what you want to do].
+Help me set up and start using FrostBridge on this computer:
+https://github.com/receyuki/FrostBridge
 
 Use a local checkout or repository access I have authorized. Documentation:
 - README.md: project scope, hardware and quick start.
@@ -64,7 +64,7 @@ Use a local checkout or repository access I have authorized. Documentation:
 - SECURITY.md: credentials and private data.
 - CONTRIBUTING.md and docs/en/development.md: code changes and validation.
 
-Read the documents relevant to my goal, then carry out the available steps.
+Inspect the existing setup, read the relevant documents, and complete the remaining steps.
 Ask only for missing information or steps requiring my involvement.
 Report what you verified and what remains; if you cannot access my computer/USB,
 give the exact local commands I need to run.

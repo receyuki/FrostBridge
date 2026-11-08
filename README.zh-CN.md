@@ -46,13 +46,13 @@ FrostBridge在ESP32本地运行，不需要自己的云后台或账号，也不�
 
 ## 交给 Agent 协助使用
 
-填入具体目标后，将下方提示词复制给 coding agent，让它按现有文档执行。
+直接将下方提示词复制给 coding agent，无需修改。
 
 <details>
 <summary>复制给 Agent 的提示词</summary>
 
 ```text
-请使用 FrostBridge 帮我完成：[填写具体目标]。
+请按照项目文档，帮我在本机配置并开始使用 FrostBridge。
 仓库：https://github.com/receyuki/FrostBridge
 
 使用本地仓库或我已授权的仓库访问方式。文档位置：
@@ -64,7 +64,7 @@ FrostBridge在ESP32本地运行，不需要自己的云后台或账号，也不�
 - SECURITY.md：凭据与私人数据处理。
 - CONTRIBUTING.zh-CN.md 和 docs/zh-CN/development.md：代码修改与验证。
 
-先阅读与目标相关的文档，再执行能自行完成的步骤。
+先检查现有环境和配置，阅读相关文档，再完成剩余步骤。
 仅在缺少信息或需要我操作时询问，最后说明已验证和待办事项。
 如无法访问本机／USB，请给出需我执行的准确本机命令。
 ```
