@@ -1,0 +1,4 @@
+# End-user build/setup tools. Developer snapshot: requirements-tools.lock
+platformio==6.2.0
+pyserial==3.5
+qrcode==8.2

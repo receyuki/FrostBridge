@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+PROJECT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+export PLATFORMIO_CORE_DIR="$PROJECT_DIR/.platformio"
+exec "$PROJECT_DIR/.venv/bin/pio" "$@"

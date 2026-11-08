@@ -1,0 +1,31 @@
+* text=auto
+*.md text eol=lf
+*.txt text eol=lf
+*.ini text eol=lf
+*.cpp text eol=lf
+*.h text eol=lf
+*.py text eol=lf
+*.sh text eol=lf
+*.bin binary
+*.zip binary
+*.png binary
+*.jpg binary
+
+# Maintainer context is preserved locally, excluded from source archives.
+/AGENTS.md export-ignore
+/GLOSSARY.md export-ignore
+/.scratch export-ignore
+/docs/agents export-ignore
+/docs/adr export-ignore
+/docs/evidence export-ignore
+/docs/planning export-ignore
+/docs/research export-ignore
+/docs/source export-ignore
+/docs/PROGRESS.md export-ignore
+/docs/TASKS.md export-ignore
+/docs/IMPLEMENTATION_PLAN.md export-ignore
+/docs/TEST_MATRIX.md export-ignore
+/docs/PROTOCOL_NOTES.md export-ignore
+/docs/M0_RUNBOOK.md export-ignore
+/docs/M3_RUNBOOK.md export-ignore
+/docs/gateway-development.md export-ignore

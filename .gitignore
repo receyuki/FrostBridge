@@ -1,0 +1,32 @@
+# Local toolchains and build output
+.pio/
+.platformio/
+.venv/
+venv/
+build/
+__pycache__/
+*.py[cod]
+
+# Credentials and machine-specific configuration
+.env
+.env.*
+!.env.example
+secrets.*
+!secrets.example.*
+include/secrets.h
+platformio.local.ini
+
+# Raw captures, flash backups and private device identifiers
+.local/
+docs/evidence/private/
+
+# macOS and editor state
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Public source/export output
+dist/
+artifacts/
