@@ -1,5 +1,5 @@
 <div align="center">
-  <img alt="FrostBridge机械雪花" src="web/apple-touch-icon.png" width="120">
+  <img alt="FrostBridge机械雪花" src="docs/images/logo.png" width="120">
   <h1>FrostBridge</h1>
   <p>面向 <strong>Alpicool / Brass Monkey 冰箱</strong>的 ESP32 Web / HomeKit 桥接项目。</p>
   <p>

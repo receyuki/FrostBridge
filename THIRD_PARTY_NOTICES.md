@@ -32,4 +32,8 @@ The clean source export is not a complete firmware-binary license bundle or SDK 
 
 The mechanical snowflake icon was generated with an image model for FrostBridge. Web PNG assets keep the chosen design. `/favicon.ico` serves the same PNG bytes as `/favicon.png`; it is not another artwork copy in flash. No Apple or Alpicool logos or endorsement are claimed.
 
+The README uses a separate PNG variant with transparent exterior corners. The opaque Web/home-screen assets are retained.
+
 机械雪花由图像模型为本项目生成，PNG保留选定设计；favicon.ico复用favicon.png字节，不重复占用Flash。没有使用Apple/Alpicool标识或声称官方背书。
+
+README使用圆角外侧透明的独立PNG版本；网页／主屏幕的不透明图标保留。

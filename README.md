@@ -1,5 +1,5 @@
 <div align="center">
-  <img alt="FrostBridge mechanical snowflake" src="web/apple-touch-icon.png" width="120">
+  <img alt="FrostBridge mechanical snowflake" src="docs/images/logo.png" width="120">
   <h1>FrostBridge</h1>
   <p>An ESP32 Web / HomeKit bridge for <strong>Alpicool / Brass Monkey fridges</strong>.</p>
   <p>

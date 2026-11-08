@@ -16,6 +16,7 @@ docs/en/troubleshooting.md
 docs/en/usage.md
 docs/images/control-en.png
 docs/images/control-zh-CN.png
+docs/images/logo.png
 docs/zh-CN/compatibility.md
 docs/zh-CN/development.md
 docs/zh-CN/getting-started.md
